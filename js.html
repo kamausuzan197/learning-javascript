@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <p id="demo"></p>
+    
+</body>
+<script>
+     let cars =["bmw","volvo","honda"];
+     document.getElementById("demo").innerHTML =cars;  
+/*retiving an element from an array*/ 
+
+     let bmw =cars[0];
+     document.getElementById("demo").innerHTML =bmw; 
+     /*array legth property*/ 
+     let len = cars.length; 
+     document.getElementById("demo").innerHTML =len; 
+     /*Access the last array element*/
+     let last = cars[cars.length-1];
+     document.getElementById("demo").innerHTML =last;
+     /*loop over an array item*/ 
+     cars.forEach((item,index,array)=>{console.log(item,index);}); 
+     /*array methods*/
+     /*tostring():convert an array into string*/
+     document.getElementById("demo").innerHTML =cars.toString();
+     /*pop():remove the last elament from an array*/
+     let last1 = cars.pop();
+     document.getElementById("demo").innerHTML =last1;
+     let last2 =cars [cars.length -1];
+     console.log(last2);
+      /*push():add a new element at the end of an array*/
+    cars.push("Audi");
+    document.getElementById("demo").innerHTML =cars;
+     /*shift():Remove the first element from an array*/
+     cars.shift();
+     document.getElementById("demo").innerHTML =cars;
+     /*unshift():add an element at the beginning of an array*/
+     cars.unshift("Hyundai");
+     document.getElementById("demo").innerHTML =cars;
+      /*concat():create a new array by merging existing arrays*/
+
+      let bikes = ["yamaha", "suzuki","royal"];
+      let vehicles = cars.concat(bikes);
+      document.getElementById("demo").innerHTML = vehicles; 
+      /*sort():sort an array in ascending order */
+
+      vehicles.sort();
+      document.getElementById("demo").innerHTML = vehicles; 
+     /*reverse():Reverse the element of an array*/
+
+     vehicles.reverse(); 
+      document.getElementById("demo").innerHTML = vehicles; 
+
+      /*map. reduce and filter.*/
+      /*array.map()-creates a new array and performs a function on each array element*/
+     let num1 = [2,3,4,5,6,7];
+     let num2 = num1.map(multiply);
+     function multiply(value){
+         return value *2;
+     }
+       
+     document.getElementById("demo").innerHTML = num2; 
+     /*array.filter() method takes each element in an array and it applies a condition statement against it*/
+     
+     let num3 = num1.filter(comp); 
+     function comp(value){
+         return value>4;
+     }
+     document.getElementById("demo").innerHTML = num3; 
+     /*array.reduce())reduces an array of value down to just one value using a function*/
+
+     let num4 = num1.reduce(sum);
+     function sum(total,value){
+         return total + value;
+     }
+     document.getElementById("demo").innerHTML = num4;
+
+</script>
+</html>
