@@ -12,14 +12,16 @@
     <script>
         let user={
             name:"chris",
+            message:"hello",
             age :24,
         };
+        console.log(user.message)
         function sayHi(){
             alert("hello!");
         }
         user.message =sayHi;
-        document.getElementsById("demo").innerHTML ="Hi"+user.name;
-        document.getElementsById("click me").onclick =user.message;
+        document.getElementById("demo").innerHTML ="Hi"+user.name;
+        document.getElementById("click me").onclick =user.message;
     </script>
 
     
