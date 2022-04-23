@@ -3,11 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" contentc"width=device-width, initial-scale=1.0">
     <title>Async_await</title>
 </head>
 <body>
     <h1>this is works the same way as promises</h1>
-    <h2></h2>
+    <script>
+        let result= function(score){
+            return new Promise(function(resolve,reject){
+                console.log("calculate result")
+                if(score=>50)
+                      resolve("congratulation! you have passed")
+                      else
+                      reject("you have failied")
+            })
+        }
+        let grade = function(response){
+            return new Promise(function( resolve,reject){
+                console.log("Calculate your grade......")
+                resolve("your grade is A")
+            }) 
+        }
+        async function calculateResults(){
+            try{
+            const response = await result(20)
+            console.log("Result received")
+            const finalgrade =await grade(response)
+            console.log(finalgrade) 
+        }
+        catch(err){
+            console.log(err)
+        }
+        }
+         calculateResults()
+    </script>
 </body>
 </html>
