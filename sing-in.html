@@ -5,8 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="text/javascript">
+        function validate(){
+            if(document.myform.Email.value ==""){
+                alert("please write your email");
+                document.myform.Email.focus()
+                return false
+            }else if(document.myform.Password.value==""){
+                alert("please write password");
+                document.myform.password.focus()
+                return false
+            }
+            else{
+                return true
+            }
+        }
+
+    </script>
 </head>
 <body>
     <h1>practising intergration</h1>
+    <form action="message.html" name="myform" onsubmit="validate()">
+        <input name =Email placeholder="Email" type ="text"><br>
+        <input name =Password placeholder="password" type ="text"><br>
+        <button type="Submit">Submit</button>
+    </form>
 </body>
 </html>
